@@ -34,7 +34,16 @@
             border-radius: 50%;
         }
         form button{
-            margin-left :45%;
+            /*margin-left :45%;*/
+            
+        }
+        .containerBottoni{
+            display: flex;
+            flex-direction: row;
+        }
+        .containerBottoni > .bottone{
+            margin-left:25%;
+            
         }
 
         .contatti{
@@ -46,8 +55,8 @@
             text-align:center;
         }
         @media screen and (max-width: 768px){
-            form button{
-                margin-left:30%;
+            .containerBottoni > .bottone{
+                margin-left:10%;
             }
         }
     </style>
@@ -87,12 +96,15 @@
             <option value="divisione">Divisione</option>
         </select>
         <br />
-        <div id="bottoni">
-            <button type="button" class="btn btn-primary" onclick="calcolatrice()">Calcola</button>
-            <hr />
-            <button type="button" class="btn btn-primary" onclick="resetta()">Resetta</button>
+        <div class="containerBottoni">
+            <div class="bottone">
+                <button type="button" class="btn btn-primary" onclick="calcolatrice()">Calcola</button>
+            </div>
+            
+            <div class="bottone">
+                <button type="button" class="btn btn-primary" onclick="resetta()">Resetta</button>
+            </div>
         </div>
-
     </form>
 
     <hr />
@@ -140,9 +152,10 @@
                 }
             }
         }
-        
+        //funzione resetta per resettare i campi del form.
         function resetta() {
-            document.getElementById("form").reset();  
+            document.getElementById("form").reset();
+
         }
     </script>
 
