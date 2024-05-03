@@ -66,7 +66,7 @@
     <div class= "container-fluid mb-3 mt-3">
         <h1>Calcolatrice</h1>
     </div>
-    <form>
+    <form id="form">
         <div class="row mb-3">
             <label for="numero1" class="col-sm-2 col-form-label">Inserisci primo numero:</label>
             <div class="col-sm-10">
@@ -80,14 +80,19 @@
             </div>
         </div>
         <select class="form-select" id="operazione" aria-label="Default select example">
-            <option selected>Seleziona operazione</option>
+            <option selected id="basic">Seleziona operazione</option>
             <option value="addizione">Addizione</option>
             <option value="sottrazione">Sottrazione</option>
             <option value="moltiplicazione">Moltiplicazione</option>
             <option value="divisione">Divisione</option>
         </select>
         <br />
-        <button type="button" class="btn btn-primary" onclick="calcolatrice()">Calcola</button>
+        <div id="bottoni">
+            <button type="button" class="btn btn-primary" onclick="calcolatrice()">Calcola</button>
+            <hr />
+            <button type="button" class="btn btn-primary" onclick="resetta()">Resetta</button>
+        </div>
+
     </form>
 
     <hr />
@@ -134,6 +139,10 @@
                         alert("Non hai selezionato nessuna operazione");
                 }
             }
+        }
+        
+        function resetta() {
+            document.getElementById("form").reset();  
         }
     </script>
 
